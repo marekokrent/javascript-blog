@@ -1,7 +1,7 @@
  'use strict';
 
  function titleClickHandler(event){
-  event.preventDefault();
+  // event.preventDefault();
   const clickedElement = this; 
 
 
@@ -26,7 +26,12 @@ for (let activeArticle of acitiveArticles){
 
 /* get 'href' attribute from the clicked link */
 
+let articleSelector = clickedElement.getAttribute("href");
+
+
 /* find the correct article using the selector (value of 'href' attribute) */
+
+targetArticle
 
 /* add class 'active' to the correct article */
 
