@@ -33,20 +33,17 @@ articleSelector = articleSelector.substr(1);
 
 /* find the correct article using the selector (value of 'href' attribute) */
 
-let targetArticle = document.querySelector('.posts article[id="'+articleSelector+'"]');
 
-
-/* add class 'active' to the correct article */
+  /* for each article */
+  let html = '';
+  const articles = document.querySelectorAll(optArticleSelector);
+  for (let article of articles){
 
 targetArticle.classList.add("active");
 
 }
 
-const links = document.querySelectorAll('.titles a');
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
 
 
 
@@ -62,7 +59,7 @@ function generateTitleLinks(){
   titleList.innerHTML='';
 
   /* for each article */
-
+  let html = '';
   const articles = document.querySelectorAll(optArticleSelector);
   for (let article of articles){
 
@@ -71,14 +68,27 @@ function generateTitleLinks(){
 
     /* find the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-    console.log(articleTitle);
+    
 
     /* get the title from the title element */
 
+    const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
+
     /* create HTML of the link */
+
+    html = html + linkHTML;
 
     /* insert link into titleList */
   }
+  titleList.innerHTML = html;
 }
 
 generateTitleLinks();
+
+
+const links = document.querySelectorAll('.titles a');
+
+
+for(let link of links){
+  link.addEventListener('click', titleClickHandler);
+}
