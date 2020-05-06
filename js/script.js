@@ -80,16 +80,17 @@ function generateTitleLinks(customSelector = ''){
     /* insert link into titleList */
   }
   titleList.innerHTML = html;
+
+  const links = document.querySelectorAll('.titles a');
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 
 generateTitleLinks();
 
-const links = document.querySelectorAll('.titles a');
-
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
 
 
 
@@ -171,7 +172,7 @@ function tagClickHandler(event){
   /* END LOOP: for each active tag link */
   }
 
-/* find all tag links with "href" attribute equal to the "href" constant */
+  /* find all tag links with "href" attribute equal to the "href" constant */
   const tagLinks = document.querySelectorAll('.post-tags .list a[href="' + href + '"]');
   /* START LOOP: for each found tag link */
   for (let tagLink of tagLinks) {
