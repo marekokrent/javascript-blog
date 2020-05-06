@@ -55,8 +55,6 @@ function generateTitleLinks(customSelector = ''){
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML='';
 
-  /* for each article */
-
   
   let html = '';
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
@@ -90,9 +88,6 @@ function generateTitleLinks(customSelector = ''){
 
 
 generateTitleLinks();
-
-
-
 
 
 function generateTags(){
