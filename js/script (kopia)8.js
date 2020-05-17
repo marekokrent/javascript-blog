@@ -148,28 +148,13 @@ function generateTags(){
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector('.tags');
   /*[NEW] create variable for all links HTML code */
-  function calculateTagsParams(tags){
-    const tagsParams = {};
-    tagsParams.max = 0;
-    tagsParams.min = 999999;
-    for(let tag in tags){
-        if (tags[tag]>tagsParams.max){
-          tagsParams.max=tags[tag];
-        }
-        if (tags[tag]<tagsParams.min){
-          tagsParams.min=tags[tag];
-        }
-    }
-    // console.log(tagsParams);
-    return tagsParams;
-
-  }
-  const tagsParams = calculateTagsParams(allTags);
   let allTagsHTML = '';
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
     allTagsHTML += '<li><a href="#tag-'+tag + '">'+tag+' - '+ allTags[tag] +'</a></li>';
   }
+  console.log(allTagsHTML);
+  
   tagList.innerHTML = allTagsHTML;
 
 }

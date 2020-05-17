@@ -49,7 +49,7 @@ const optArticleSelector = '.post',
   optArticleAuthorSelector= '.author-article',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optTagsListSelector = '.list .tags';
+  optTagsListSelector = '.tags .list';
 
 function generateTitleLinks(customSelector = ''){
 
@@ -125,7 +125,7 @@ function generateTags(){
    
       /* generate HTML of the link */
 
-      const linkHTML = '<li><a href="#tag-'+tag+'"> '+tag+' </a></li>';
+      const linkHTML = '<li><a href=#tag-'+tag+'> '+tag+' </a></li>';
 
       /* add generated code to html variable */
 
@@ -146,29 +146,12 @@ function generateTags(){
   /* END LOOP: for every article: */
   }
   /* [NEW] find list of tags in right column */
-  const tagList = document.querySelector('.tags');
+  const tagList = document.querySelector(optTagsListSelector);
   /*[NEW] create variable for all links HTML code */
-  function calculateTagsParams(tags){
-    const tagsParams = {};
-    tagsParams.max = 0;
-    tagsParams.min = 999999;
-    for(let tag in tags){
-        if (tags[tag]>tagsParams.max){
-          tagsParams.max=tags[tag];
-        }
-        if (tags[tag]<tagsParams.min){
-          tagsParams.min=tags[tag];
-        }
-    }
-    // console.log(tagsParams);
-    return tagsParams;
-
-  }
-  const tagsParams = calculateTagsParams(allTags);
   let allTagsHTML = '';
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
-    allTagsHTML += '<li><a href="#tag-'+tag + '">'+tag+' - '+ allTags[tag] +'</a></li>';
+    allTagsHTML += tag + '(' + allTags[tag] +')';
   }
   tagList.innerHTML = allTagsHTML;
 
