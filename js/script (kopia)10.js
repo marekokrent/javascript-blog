@@ -177,7 +177,7 @@ function generateTags(){
   let allTagsHTML = '';
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
-    const tagLinkHTML = '<li><a class="tag-size-'+calculateTagClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
+    const tagLinkHTML = '<li><a class="tag-size-'+calculateTagClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' - '+ allTags[tag] +'</a></li>';
     allTagsHTML += tagLinkHTML;
   }
   tagList.innerHTML = allTagsHTML;
