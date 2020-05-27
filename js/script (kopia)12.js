@@ -260,7 +260,15 @@ function generateAuthors() {
     } else { allAuthor[articleAuthor]++;}  
   }
 
- function calculateAuthorParams(authors){
+  for(let author in allAuthor){
+    const link = '<li><a href="#author-'+author+'"><span class="author-name">'+author+'</span></a></li>';
+    html +=link;
+  }
+  
+  wrapperAuthorsSidebar.innerHTML = html;
+  console.log(allAuthor);
+
+function calculateAuthorParams(authors){
   const authorParams = {};
   authorParams.max = 0;
   authorParams.min = 999999;
@@ -276,16 +284,6 @@ function generateAuthors() {
 }
 const authorParams = calculateAuthorParams(allAuthor);
 console.log(authorParams);
-
-for(let author in allAuthor){
-  const link = '<li><a class="author-size'+calculateTagClass(allAuthor[author], authorParams)+'" href="#author-'+author+'">'+author+'</span></a></li>';
-  html +=link;
-}
-
-wrapperAuthorsSidebar.innerHTML = html;
-console.log(allAuthor);
-
-
 
 }
 

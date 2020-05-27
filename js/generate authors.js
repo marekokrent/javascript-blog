@@ -1,4 +1,4 @@
-function generateTags(){
+function generate(){
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = {};
   
@@ -82,11 +82,14 @@ function generateTags(){
   
   generateTags();
 
-let allAuthors= {};
+
 
 function generateAuthors() {
+  let allAuthors= {};
 
     const articles = document.querySelectorAll(optArticleSelector );
+
+    
     for (let article of articles){
       let wrapperAuthors = article.querySelector(optArticleAuthorSelector);
       let articleAuthor = article.dataset.author; 
