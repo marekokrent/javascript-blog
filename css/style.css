@@ -99,7 +99,7 @@ body {
   font-style: italic;
 }
 
-.list, .tags li {
+.list, .tags li, .authors li {
   display: inline-block;
 }
 
@@ -129,6 +129,26 @@ body {
 }
 
 .tag-size-5 {
+  font-size: 180%;
+}
+
+.author-size-1 {
+  font-size: 100%;
+}
+
+.author-size-2 {
+  font-size: 120%;
+}
+
+.author-size-3 {
+  font-size: 140%;
+}
+
+.author-size-4 {
+  font-size: 160%;
+}
+
+.author-size-5 {
   font-size: 180%;
 }
 /*# sourceMappingURL=style.css.map */

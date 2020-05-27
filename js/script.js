@@ -96,7 +96,7 @@ function generateTitleLinks(customSelector = ''){
 
 generateTitleLinks();
 
-function calculateTagClass (count, params){
+function calculateClass (count, params){
   const normalizedCount = count - params.min;
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
@@ -178,7 +178,7 @@ function generateTags(){
   let allTagsHTML = '';
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
-    const tagLinkHTML = '<li><a class="tag-size-'+calculateTagClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
+    const tagLinkHTML = '<li><a class="tag-size-'+calculateClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
     allTagsHTML += tagLinkHTML;
   }
   tagList.innerHTML = allTagsHTML;
@@ -278,7 +278,7 @@ const authorParams = calculateAuthorParams(allAuthor);
 console.log(authorParams);
 
 for(let author in allAuthor){
-  const link = '<li><a class="author-size'+calculateTagClass(allAuthor[author], authorParams)+'" href="#author-'+author+'">'+author+'</span></a></li>';
+  const link = '<li><a class="author-size-'+calculateClass(allAuthor[author], authorParams)+'" href="#author-'+author+'">'+author+' - '+allAuthor[author]+'</span></a></li>';
   html +=link;
 }
 
