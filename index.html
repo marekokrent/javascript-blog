@@ -273,10 +273,9 @@
       </div>
 
 <script id="template-aside-tag" type="text/x-handlebars-template">
-  {{#each allTagsData}}
-  <li><a class="tag-size-{{className}}" href="#tag-{{linkTag}}"}>{{tag}}-{{count}}</a></li>
+  {{#each tags}}
+  <li><a class="tag-size-{{className}}" href="#tag-{{linkTag}}"}>{{tag}}{{count}}</a></li>
   {{/each}}
-  
 </script>
 
 <sript id="template-article-author" type="text/x-handlebars-template">

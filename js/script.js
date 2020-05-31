@@ -189,6 +189,7 @@ function generateTags(){
     return tagsParams;
 
   }
+  
   const tagsParams = calculateTagsParams(allTags);
   //let allTagsHTML = '';
   const allTagsData = {tags: []};
@@ -197,15 +198,14 @@ function generateTags(){
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
-      className: calculateTagClass(allTags[tag], tagsParams)
+      className: calculateTagClass(allTags[tag], tagsParams),
     });
 
-
+    console.log(allTagsData);
     let allTagsHTML = templates.cloudTags(allTagsData);
     //const tagLinkHTML = '<li><a class="tag-size-'+calculateClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
     //allTagsHTML += tagLinkHTML;
   }
-  
   tagList.innerHTML = allTagsHTML;
 
 }
@@ -351,4 +351,3 @@ function addClickListenersToAuthors(){
 } const titleList = document.querySelector(optTitleListSelector);
 
 addClickListenersToAuthors();
-
