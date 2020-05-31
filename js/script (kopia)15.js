@@ -6,9 +6,7 @@ const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagLink: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML),
   authorLink: Handlebars.compile(document.querySelector('#template-article-author').innerHTML),
-  cloudTags: Handlebars.compile(document.querySelector('#template-aside-tag').innerHTML),
-
-
+  
 }
 
 function titleClickHandler(event){
@@ -190,15 +188,12 @@ function generateTags(){
 
   }
   const tagsParams = calculateTagsParams(allTags);
-  //let allTagsHTML = '';
+  let allTagsHTML = '';
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
-    const linkallTags = {tag: {tagSize: calculateClass(allTags[tag], tagsParams),linkTag: tag,},};
-    let allTagsHTML = templates.cloudTags(linkallTags);
-    //const tagLinkHTML = '<li><a class="tag-size-'+calculateClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
-    //allTagsHTML += tagLinkHTML;
+    const tagLinkHTML = '<li><a class="tag-size-'+calculateClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
+    allTagsHTML += tagLinkHTML;
   }
-  
   tagList.innerHTML = allTagsHTML;
 
 }
@@ -305,7 +300,10 @@ for(let author in allAuthor){
 
 wrapperAuthorsSidebar.innerHTML = html;
 console.log(allAuthor);
-linkallTags
+
+
+
+}
 
 generateAuthors()
 

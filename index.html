@@ -14,6 +14,7 @@
             <aside class="sidebar">
               <h2 class="section-title">All posts</h2>
               <ul class="list titles">
+                
                 <!-- <li><a href="#article-1" class="active"><span>Article 1</span></a></li>
                 <li><a href="#article-2"><span>Article 2</span></a></li>
                 <li><a href="#article-3"><span>Article 3</span></a></li>
@@ -270,6 +271,26 @@
           </main>
         </div>
       </div>
+
+<script id="template-aside-tag" type="text/x-handlebars-template">
+  {{#each linkallTags}}
+  <li><a class="tag-size-{{tagSize}}" href="#tag-{{linkTag}}"}>{{linkTag}}</a></li>
+  {{/each}}
+  
+</script>
+
+<sript id="template-article-author" type="text/x-handlebars-template">
+  <p><strong>Author:</strong><a href="#author-{{author}}">{{author}}</a></p>
+</sript>
+
+<sript id="template-article-tag" type="text/x-handlebars-template">
+  <li><a href="#tag-{{idtag}}"> {{idtag}} </a></li>
+</sript>
+
+<script id="template-article-link" type="text/x-handlebars-template">
+  <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 <script src="js/script.js"></script>
 
 </body>
