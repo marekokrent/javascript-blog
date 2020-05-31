@@ -191,10 +191,17 @@ function generateTags(){
   }
   const tagsParams = calculateTagsParams(allTags);
   //let allTagsHTML = '';
+  const allTagsData = {tags: []};
   /* [NEW] START LOOP for each tag in allTags: */
   for (let tag in allTags){
-    const linkallTags = {tag: {tagSize: calculateClass(allTags[tag], tagsParams),linkTag: tag,},};
-    let allTagsHTML = templates.cloudTags(linkallTags);
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className: calculateTagClass(allTags[tag], tagsParams)
+    });
+
+
+    let allTagsHTML = templates.cloudTags(allTagsData);
     //const tagLinkHTML = '<li><a class="tag-size-'+calculateClass(allTags[tag], tagsParams)+'" href="#tag-'+tag + '">'+tag+' '+'</a></li>';
     //allTagsHTML += tagLinkHTML;
   }

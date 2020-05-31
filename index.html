@@ -273,8 +273,8 @@
       </div>
 
 <script id="template-aside-tag" type="text/x-handlebars-template">
-  {{#each linkallTags}}
-  <li><a class="tag-size-{{tagSize}}" href="#tag-{{linkTag}}"}>{{linkTag}}</a></li>
+  {{#each allTagsData}}
+  <li><a class="tag-size-{{className}}" href="#tag-{{linkTag}}"}>{{tag}}-{{count}}</a></li>
   {{/each}}
   
 </script>
